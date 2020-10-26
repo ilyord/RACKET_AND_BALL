@@ -127,12 +127,15 @@ def drawBrick():
     #Gauche
     if (BX<ballX+ballRadius<BX+ballRadius and BY<ballY+ballRadius<BY+BH):
         ballAngle= PI-ballAngle
+        ballX=BX-ballRadius
     #Droite
-    elif (BX+BW<ballX+ballRadius<BX+BW+ballRadius and BY<ballY+ballRadius<BY+BH):
+    elif (BX+BW<ballX+ballRadius<BX+(BW+ballRadius*2) and BY<ballY+ballRadius<BY+BH):
         ballAngle= PI-ballAngle
     #Haut
     if (BX<ballX+ballRadius<BX+BW and BY<ballY+ballRadius<BY+ballRadius):
         ballAngle= -ballAngle
+        ballY=BY-ballRadius
     #Bas
-    elif (BX<ballX+ballRadius<BX+BW and BY+BH<ballY+ballRadius<BY+BH+ballRadius):
-        ballAngle= PI-ballAngle
+    elif (BX<ballX+ballRadius<BX+BW and BY+BH<ballY+ballRadius<BY+BH+(ballRadius*2)):
+        ballAngle= -ballAngle
+        ballY=BY+BH+ballRadius
