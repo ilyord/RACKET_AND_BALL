@@ -123,10 +123,16 @@ def drawBrick():
     fill(255)
     rect (BX,BY, BW, BH)
     
-    if (BY<ballY+ballRadius<BY+BH and BX<ballX+ballRadius<BX+BW):
-        ballAngle= -ballAngle
-        
-        
-    if (BX>ballX-ballRadius>BX+BW and BY>ballY+ballRadius>BY+BH):
+    
+    #Gauche
+    if (BX<ballX+ballRadius<BX+ballRadius and BY<ballY+ballRadius<BY+BH):
         ballAngle= PI-ballAngle
-        
+    #Droite
+    elif (BX+BW<ballX+ballRadius<BX+BW+ballRadius and BY<ballY+ballRadius<BY+BH):
+        ballAngle= PI-ballAngle
+    #Haut
+    if (BX<ballX+ballRadius<BX+BW and BY<ballY+ballRadius<BY+ballRadius):
+        ballAngle= -ballAngle
+    #Bas
+    elif (BX<ballX+ballRadius<BX+BW and BY+BH<ballY+ballRadius<BY+BH+ballRadius):
+        ballAngle= PI-ballAngle
